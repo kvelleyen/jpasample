@@ -9,7 +9,17 @@ public interface Services {
 	public void creatVoiture (int nbPlace, Collection<Evenement> events, Personne chauffeur, Collection<Personne> passagers);
 	public void creatPersonne (Collection<Voiture> driveOf, Collection<Voiture> passengerOf);
 	
-	public void getDriver ();
+	public Collection<Evenement> getAllEvent();
+	public Collection<Personne> getAllPersonne();
+	public Collection<Voiture> getAllVoiture();
+	
+	public Personne getDriver (int idVoit);
+	public Collection<Personne> getPassengers (int idVoit);
+	
+	public Collection<Voiture> getCarsDrive (int idPersonnne);
+	public Collection<Voiture> getCarsPassing (int idPersonne);
+	
+	
 	
 }
 
