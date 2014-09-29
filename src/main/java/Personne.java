@@ -27,15 +27,6 @@ public class Personne {
 		this.id = id;
 	}
 
-
-	public int getNbPlaces() {
-		return nbPlaces;
-	}
-
-	public void setNbPlaces(int nbPlaces) {
-		this.nbPlaces = nbPlaces;
-	}
-
 	@OneToMany(mappedBy="chauffeur")
 	public Collection<Voiture> getDriverOf() {
 		return driverOf;
