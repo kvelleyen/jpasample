@@ -1,0 +1,19 @@
+/*C2*/SET SCHEMA PUBLIC
+drop table EVENEMENT if exists
+drop table EVE_VOIT if exists
+drop table PASSENGER_VOITURE if exists
+drop table PERSONNE if exists
+drop table VOITURE if exists
+create table EVENEMENT (id integer not null, date timestamp, lieu varchar(255), primary key (id))
+create table EVE_VOIT (idEvent integer not null, idVoit integer not null)
+create table PASSENGER_VOITURE (idPassenger integer not null, idVoiture integer not null)
+create table PERSONNE (id integer not null, nbPlaces integer not null, primary key (id))
+create table VOITURE (id integer not null, nb_places integer not null, chauffeur_id integer, primary key (id))
+alter table EVE_VOIT add constraint FK402A654FDB62C8A8 foreign key (idEvent) references EVENEMENT
+alter table EVE_VOIT add constraint FK402A654F41A55263 foreign key (idVoit) references VOITURE
+alter table PASSENGER_VOITURE add constraint FKF7A2DE5F124E68ED foreign key (idVoiture) references VOITURE
+alter table PASSENGER_VOITURE add constraint FKF7A2DE5F647161CB foreign key (idPassenger) references PERSONNE
+alter table VOITURE add constraint FK5052ED24126DABBD foreign key (chauffeur_id) references PERSONNE
+DISCONNECT
+/*C3*/SET SCHEMA PUBLIC
+DISCONNECT

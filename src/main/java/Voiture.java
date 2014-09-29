@@ -10,7 +10,7 @@ import javax.persistence.Table;
 @Table(name="VOITURE")
 public class Voiture {
 	
-	public int id;
+	private int id;
 	public int nb_places;
 	public Collection<Evenement> evenement;
 	public Personne chauffeur;

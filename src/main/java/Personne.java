@@ -15,7 +15,6 @@ import javax.persistence.Table;
 public class Personne {
 
 	private int id;
-	public int nbPlaces;
 	public Collection<Voiture> driverOf;
 	public Collection<Voiture> passengerOf;
 	
