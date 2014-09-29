@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import javax.sound.midi.VoiceStatus;
 
 public class JpaTest {
 
@@ -24,7 +25,11 @@ public class JpaTest {
 
 		EntityTransaction tx = manager.getTransaction();
 		tx.begin();
-
+		
+		Voiture v = new Voiture(5);
+		
+		manager.persist(v);
+		
 		try {
 
 			//manager.persist(et);
@@ -39,6 +44,9 @@ public class JpaTest {
 		Enseignant es = (Enseignant) manager.createQuery(
 				"select e1 from Enseignant as e1 where e1.nom='barais'")
 				.getSingleResult();*/
+		
+		
+		
 		
 	}
 
